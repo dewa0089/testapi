@@ -1,20 +1,29 @@
 // (4) Buat Schema Mahasiswa
 const mongoose = require('mongoose')
 
-const MahasiswaSchema = mongoose.Schema({
+const ProductSchema = mongoose.Schema({
     // Buat Schema data
+    kode: {
+        type: String,
+        required: true
+    },
     nama: {
         type: String,
         required: true
     },
-    alamat: {
+    harga: {
+        type: Number,
+        required: true
+    },
+    gambar: {
         type: String,
         required: true
     },
+
     createdAt: {
         type: Date,
         default: Date.now
     }
 })
 
-module.exports = mongoose.model('Mahasiswa', MahasiswaSchema)
+module.exports = mongoose.model('Product', ProductSchema)

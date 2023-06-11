@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 require('dotenv/config')
 
 // (6) middleware body-parser
@@ -11,6 +12,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+app.use(cors())
 
 // (7) import routes
 
@@ -28,6 +30,7 @@ app.use('/order', orderRoutes)
 app.use('/makanan', makananRoutes)
 app.use('/minuman', minumanRoutes)
 app.use('/Best', bestRoutes)
+
 
 // (3) koneksi ke database mongodb
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })

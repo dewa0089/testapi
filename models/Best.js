@@ -1,7 +1,7 @@
 // (4) Buat Schema Mahasiswa
 const mongoose = require('mongoose')
 
-const BestproductSchema = mongoose.Schema({
+const BestSchema = mongoose.Schema({
     // Buat Schema data
     kode: {
         type: String,
@@ -26,4 +26,4 @@ const BestproductSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Bestproduct', BestproductSchema)
+module.exports = mongoose.model('Best', BestSchema)

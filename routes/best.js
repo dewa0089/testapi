@@ -1,12 +1,12 @@
 // (5) Buat router Mahasiswa
 const express = require('express')
 const router = express.Router() 
-const Bestproduct = require('../models/Bestproduct')
+const Best = require('../models/Best')
 
 // Create 
 router.post('/', async(req, res) => {
     // tampung input mahasiswa 
-    const bestproductPost = new Bestproduct({
+    const bestPost = new Best({
         kode: req.body.kode,
         nama: req.body.nama,
         harga: req.body.harga,
@@ -15,9 +15,9 @@ router.post('/', async(req, res) => {
 
     try {
         // simpan data 
-        const bestproduct = await bestproductPost.save()
+        const best = await bestPost.save()
         // response
-        res.json(bestproduct)
+        res.json(best)
     } catch (error) {
         res.json({message: error})
     }
@@ -26,8 +26,8 @@ router.post('/', async(req, res) => {
 // Read
 router.get('/', async(req, res) => {
     try {
-        const bestproduct = await Bestproduct.find()
-        res.json(product)
+        const best = await Best.find()
+        res.json(best)
     } catch (error) {
         res.json({message: error})
     }
@@ -35,7 +35,7 @@ router.get('/', async(req, res) => {
 
 
 // Update 
-router.put('/:bestproductId', async(req, res) => {
+router.put('/:bestId', async(req, res) => {
     // tampung input mahasiswa 
     const data = {
         kode: req.body.kode,
@@ -46,21 +46,21 @@ router.put('/:bestproductId', async(req, res) => {
 
     try {
         // update data 
-        const bestproduct = await Product.updateOne({_id: req.params.bestproductId}, data)
+        const best = await Best.updateOne({_id: req.params.bestId}, data)
         // response
-        res.json(bestproduct)
+        res.json(best)
     } catch (error) {
         res.json({message: error})
     }
 })
 
 // Delete 
-router.delete('/:bestproductId', async(req, res) => {
+router.delete('/:bestId', async(req, res) => {
     try {
         // delete data 
-        const bestproduct = await Bestproduct.deleteOne({_id: req.params.bestproductId})
+        const best = await Best.deleteOne({_id: req.params.bestId})
         // response
-        res.json(bestproduct)
+        res.json(best)
     } catch (error) {
         res.json({message: error})
     }

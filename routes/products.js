@@ -1,12 +1,12 @@
 // (5) Buat router Mahasiswa
 const express = require('express')
 const router = express.Router() 
-const Product = require('../models/Product')
+const Products = require('../models/Products')
 
 // Create 
 router.post('/', async(req, res) => {
     // tampung input mahasiswa 
-    const productPost = new Product({
+    const productsPost = new Products({
         kode: req.body.kode,
         nama: req.body.nama,
         harga: req.body.harga,
@@ -15,9 +15,9 @@ router.post('/', async(req, res) => {
 
     try {
         // simpan data 
-        const product = await productPost.save()
+        const products = await productsPost.save()
         // response
-        res.json(product)
+        res.json(products)
     } catch (error) {
         res.json({message: error})
     }
@@ -26,8 +26,8 @@ router.post('/', async(req, res) => {
 // Read
 router.get('/', async(req, res) => {
     try {
-        const product = await Product.find()
-        res.json(product)
+        const products = await Products.find()
+        res.json(products)
     } catch (error) {
         res.json({message: error})
     }
@@ -35,7 +35,7 @@ router.get('/', async(req, res) => {
 
 
 // Update 
-router.put('/:productId', async(req, res) => {
+router.put('/:productsId', async(req, res) => {
     // tampung input mahasiswa 
     const data = {
         kode: req.body.kode,
@@ -46,21 +46,21 @@ router.put('/:productId', async(req, res) => {
 
     try {
         // update data 
-        const product = await Product.updateOne({_id: req.params.productId}, data)
+        const products = await Products.updateOne({_id: req.params.productsId}, data)
         // response
-        res.json(product)
+        res.json(products)
     } catch (error) {
         res.json({message: error})
     }
 })
 
 // Delete 
-router.delete('/:productId', async(req, res) => {
+router.delete('/:productsId', async(req, res) => {
     try {
         // delete data 
-        const product = await Product.deleteOne({_id: req.params.productId})
+        const products = await Products.deleteOne({_id: req.params.productsId})
         // response
-        res.json(product)
+        res.json(products)
     } catch (error) {
         res.json({message: error})
     }

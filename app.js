@@ -17,11 +17,17 @@ app.use(bodyParser.json());
 const productRoutes = require('./routes/product')
 const keranjangRoutes = require('./routes/keranjang')
 const orderRoutes = require('./routes/order')
+const bestproductRoutes = require('./routes/bestproduct')
+const makananRoutes = require('./routes/makanan')
+const minumanRoutes = require('./routes/minuman')
 
 // (8) app.use (mendaftarkan middleware baru ke Express)
 app.use('/product', productRoutes)
 app.use('/keranjang', keranjangRoutes)
 app.use('/order', orderRoutes)
+app.use('/bestproduct', bestproductRoutes)
+app.use('/makanan', makananRoutes)
+app.use('/minuman', minumanRoutes)
 
 // (3) koneksi ke database mongodb
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })

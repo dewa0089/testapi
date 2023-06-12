@@ -37,8 +37,8 @@ router.get('/', async(req, res) => {
 //Get id
 router.get('/:productskode', async (req, res) => {
     try{
-        const makanan = await Makanan.findById(req.params.productskode);
-        res.json(makanan)
+        const products = await Products.findById(req.params.productskode);
+        res.json(products)
     }
     catch(error){
         res.status(500).json({message: error.message})

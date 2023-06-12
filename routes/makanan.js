@@ -34,6 +34,20 @@ router.get('/', async(req, res) => {
 })
 
 
+//Get id
+router.get('/makanan/:id', async (req, res) => {
+    try{
+        const makanan = await Makanan.findById(req.params.kode);
+        res.json(makanan)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
+
+
+
+
 // Update 
 router.put('/:makananId', async(req, res) => {
     // tampung input mahasiswa 
@@ -65,5 +79,9 @@ router.delete('/:makananId', async(req, res) => {
         res.json({message: error})
     }
 })
+
+
+
+
 
 module.exports = router

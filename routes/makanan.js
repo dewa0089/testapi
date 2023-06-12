@@ -34,17 +34,6 @@ router.get('/', async(req, res) => {
 })
 
 
-//Get id
-router.get('/:makananId', async (req, res) => {
-    try{
-        const makanan = await Makanan.findById(req.params.makananId);
-        res.json(makanan)
-    }
-    catch(error){
-        res.status(500).json({message: error.message})
-    }
-})
-
 
 
 

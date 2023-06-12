@@ -34,6 +34,18 @@ router.get('/', async(req, res) => {
 })
 
 
+//Get id
+router.get('/:productskode', async (req, res) => {
+    try{
+        const makanan = await Makanan.findById(req.params.productskode);
+        res.json(makanan)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
+
+
 // Update 
 router.put('/:productsId', async(req, res) => {
     // tampung input mahasiswa 

@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 
 const ProductsSchema = mongoose.Schema({
     // Buat Schema data
-    kode: {
-        type: String,
+    kategori: {
+        type: Number,
         required: true
     },
     nama: {
@@ -19,7 +19,10 @@ const ProductsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-
+    identitas:{
+        type: Number,
+        required: true
+    },
     createdAt: {
         type: Date,
         default: Date.now

@@ -7,10 +7,11 @@ const Products = require('../models/Products')
 router.post('/', async(req, res) => {
     // tampung input mahasiswa 
     const productsPost = new Products({
-        kode: req.body.kode,
+        kategori: req.body.kategori,
         nama: req.body.nama,
         harga: req.body.harga,
-        gambar: req.body.gambar
+        gambar: req.body.gambar,
+        identitas: req.body.identitas
     })
 
     try {
@@ -50,10 +51,11 @@ router.get('/:productskode', async (req, res) => {
 router.put('/:productsId', async(req, res) => {
     // tampung input mahasiswa 
     const data = {
-        kode: req.body.kode,
+        kategori: req.body.kategori,
         nama: req.body.nama,
         harga: req.body.harga,
-        gambar: req.body.gambar
+        gambar: req.body.gambar,
+        identitas: req.body.identitas
     }
 
     try {

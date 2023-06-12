@@ -19,17 +19,12 @@ app.use(cors())
 const productsRoutes = require('./routes/products')
 const keranjangRoutes = require('./routes/keranjang')
 const orderRoutes = require('./routes/order')
-const makananRoutes = require('./routes/makanan')
-const minumanRoutes = require('./routes/minuman')
-const bestRoutes = require('./routes/best')
+
 
 // (8) app.use (mendaftarkan middleware baru ke Express)
 app.use('/products', productsRoutes)
 app.use('/keranjang', keranjangRoutes)
 app.use('/order', orderRoutes)
-app.use('/makanan', makananRoutes)
-app.use('/minuman', minumanRoutes)
-app.use('/Best', bestRoutes)
 
 
 // (3) koneksi ke database mongodb

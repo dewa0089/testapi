@@ -24,18 +24,9 @@ router.post('/', async(req, res) => {
 })
 
 // Read
-router.get('/', async(req, res) => {
-    try {
-        const makanan = await Makanan.find()
-        res.json(makanan)
-    } catch (error) {
-        res.json({message: error})
-    }
-})
-
 
 //Get id
-router.get('/makanan/:id', async (req, res) => {
+router.get('/getOne/:kode', async (req, res) => {
     try{
         const makanan = await Makanan.findById(req.params.kode);
         res.json(makanan)

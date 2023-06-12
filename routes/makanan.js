@@ -35,9 +35,9 @@ router.get('/', async(req, res) => {
 
 
 //Get id
-router.get('/makanan/:_id', async (req, res) => {
+router.get('/:makananId', async (req, res) => {
     try{
-        const makanan = await Makanan.findById(req.params._id);
+        const makanan = await Makanan.findById(req.params.makananId);
         res.json(makanan)
     }
     catch(error){

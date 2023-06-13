@@ -45,7 +45,7 @@ router.get('/:_id', async (req, res) => {
 })
 
 //Get id
-router.get('/:kategori', async (req, res) => {
+router.get('/:kategori/k', async (req, res) => {
     try{
         const products = await Products.find({kategori:req.params.kategori});
         res.json(products)
@@ -56,7 +56,7 @@ router.get('/:kategori', async (req, res) => {
 })
 
 //Get id
-router.get('/:best/coba', async (req, res) => {
+router.get('/:best/b', async (req, res) => {
     try{
         const products = await Products.find({best:req.params.best});
         res.json(products)

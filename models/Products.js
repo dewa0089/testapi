@@ -19,8 +19,8 @@ const ProductsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    keterangan:{
-        type: String,
+    best:{
+        type: Number,
         required: true
     },
     createdAt: {

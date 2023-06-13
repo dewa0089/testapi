@@ -2,7 +2,6 @@
 const express = require('express')
 const router = express.Router() 
 const Products = require('../models/Products')
-const { Db } = require('mongodb')
 
 // Create 
 router.post('/', async(req, res) => {
@@ -48,9 +47,9 @@ router.get('/:kategori', async (req, res) => {
 })
 
 //Get id
-router.get('/:keterangan', async (req, res) => {
+router.get('/:best', async (req, res) => {
     try{
-        const products = await Products.find({keterangan:req.params.keterangan});
+        const products = await Products.find({best:req.params.best});
         res.json(products)
     }
     catch(error){

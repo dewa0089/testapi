@@ -48,6 +48,17 @@ router.get('/:kategori', async (req, res) => {
 })
 
 
+router.get('/:identitas', async (req, res) => {
+    try{
+        const products = await Products.find({identitas:req.params.identitas});
+        res.json(products)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
+
+
 
 router.get('/:_id', async (req, res) => {
     try{

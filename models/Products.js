@@ -15,8 +15,8 @@ const ProductsSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    percobaan:{
-        type: Number,
+    gambar: {
+        type: String,
         required: true
     },
     createdAt: {

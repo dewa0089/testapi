@@ -107,7 +107,7 @@ router.delete('/:productsId', async(req, res) => {
 router.delete('/', async(req, res) => {
     try {
         // delete data 
-        const products = await Products.deleteOne()
+        const products = await Products.delete()
         // response
         res.json(products)
     } catch (error) {

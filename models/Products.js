@@ -20,7 +20,7 @@ const ProductsSchema = mongoose.Schema({
         required: true
     },
     identitas:{
-        type: String,
+        type: Number,
         required: true
     },
     createdAt: {

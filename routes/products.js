@@ -104,4 +104,15 @@ router.delete('/:productsId', async(req, res) => {
     }
 })
 
+router.delete('/', async(req, res) => {
+    try {
+        // delete data 
+        const products = await Products.deleteOne()
+        // response
+        res.json(products)
+    } catch (error) {
+        res.json({message: error})
+    }
+})
+
 module.exports = router

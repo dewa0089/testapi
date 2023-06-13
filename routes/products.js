@@ -2,6 +2,7 @@
 const express = require('express')
 const router = express.Router() 
 const Products = require('../models/Products')
+const { Db } = require('mongodb')
 
 // Create 
 router.post('/', async(req, res) => {
@@ -36,15 +37,27 @@ router.get('/', async(req, res) => {
 
 
 //Get id
-router.get('/:productgambar', async (req, res) => {
+router.get('/:kategori', async (req, res) => {
     try{
-        const products = await Products.findById(req.params.productgambar);
+        const products = await Products.findById(req.params.kategori);
         res.json(products)
     }
     catch(error){
         res.status(500).json({message: error.message})
     }
 })
+
+router.get('/:kategori', async (req, res) => {
+    try{
+        const products = await Products.find(req.params.kategori);
+        res.json(products)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
+
+
 
 router.get('/:_id', async (req, res) => {
     try{

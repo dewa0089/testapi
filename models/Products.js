@@ -5,7 +5,7 @@ const ProductsSchema = mongoose.Schema({
     // Buat Schema data
     kategori: {
         type: Number,
-        required: false
+        required: true
     },
     nama: {
         type: String,
@@ -17,7 +17,7 @@ const ProductsSchema = mongoose.Schema({
     },
     gambar: {
         type: String,
-        required: false
+        required: true
     },
     identitas:{
         type: Number,

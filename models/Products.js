@@ -19,7 +19,7 @@ const ProductsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    best:{
+    percobaan:{
         type: Number,
         required: true
     },

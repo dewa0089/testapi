@@ -48,9 +48,9 @@ router.get('/:kategori', async (req, res) => {
 })
 
 //Get id
-router.get('/:ket', async (req, res) => {
+router.get('/:keterangan', async (req, res) => {
     try{
-        const products = await Products.find({ket:req.params.ket});
+        const products = await Products.find({keterangan:req.params.keterangan});
         res.json(products)
     }
     catch(error){

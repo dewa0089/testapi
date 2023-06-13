@@ -46,6 +46,16 @@ router.get('/productskategori', async (req, res) => {
     }
 })
 
+router.get('/_id', async (req, res) => {
+    try{
+        const products = await Products.findById(req.params._id);
+        res.json(products)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
+
 
 // Update 
 router.put('/:productsId', async(req, res) => {

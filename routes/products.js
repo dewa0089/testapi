@@ -34,6 +34,15 @@ router.get('/', async(req, res) => {
     }
 })
 
+router.get('/:_id', async (req, res) => {
+    try{
+        const products = await Products.findById(req.params._id);
+        res.json(products)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
 
 //Get id
 router.get('/:kategori', async (req, res) => {
@@ -58,15 +67,6 @@ router.get('/:best/coba', async (req, res) => {
 })
 
 
-router.get('/:h/_id', async (req, res) => {
-    try{
-        const products = await Products.findById({_id:req.params._id});
-        res.json(products)
-    }
-    catch(error){
-        res.status(500).json({message: error.message})
-    }
-})
 
 
 // Update 

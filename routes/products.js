@@ -58,9 +58,9 @@ router.get('/:best/coba', async (req, res) => {
 })
 
 
-router.get('/:productId', async (req, res) => {
+router.get('/:h/_id', async (req, res) => {
     try{
-        const products = await Products.findById({_id:req.params.productId});
+        const products = await Products.findById({_id:req.params._id});
         res.json(products)
     }
     catch(error){

@@ -39,17 +39,7 @@ router.get('/', async(req, res) => {
 //Get id
 router.get('/:kategori', async (req, res) => {
     try{
-        const products = await Products.findById(req.params.kategori);
-        res.json(products)
-    }
-    catch(error){
-        res.status(500).json({message: error.message})
-    }
-})
-
-router.get('/:kategori', async (req, res) => {
-    try{
-        const products = await Products.find(req.params.kategori);
+        const products = await Products.find({kategori:req.params.kategori});
         res.json(products)
     }
     catch(error){

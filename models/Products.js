@@ -6,7 +6,6 @@ const ProductsSchema = mongoose.Schema({
 
     sample: {
         type: Number,
-        required: true
     },
     kategori: {
         type: Number,

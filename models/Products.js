@@ -3,6 +3,11 @@ const mongoose = require('mongoose')
 
 const ProductsSchema = mongoose.Schema({
     // Buat Schema data
+
+    sample: {
+        type: Number,
+        required: true
+    },
     kategori: {
         type: Number,
         required: true

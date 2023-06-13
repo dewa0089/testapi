@@ -5,7 +5,7 @@ const ProductsSchema = mongoose.Schema({
     // Buat Schema data
     kategori: {
         type: Number,
-        required: true
+        required: false
     },
     nama: {
         type: String,

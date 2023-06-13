@@ -19,7 +19,7 @@ const ProductsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    identitas:{
+    ket:{
         type: Number,
         required: true
     },

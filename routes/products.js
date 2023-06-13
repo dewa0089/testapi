@@ -47,16 +47,18 @@ router.get('/:kategori', async (req, res) => {
     }
 })
 
-
-router.get('/:identitas', async (req, res) => {
+//Get id
+router.get('/:ket', async (req, res) => {
     try{
-        const products = await Products.find({identitas:req.params.identitas});
+        const products = await Products.find({ket:req.params.ket});
         res.json(products)
     }
     catch(error){
         res.status(500).json({message: error.message})
     }
 })
+
+
 
 
 

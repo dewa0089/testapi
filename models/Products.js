@@ -21,7 +21,7 @@ const ProductsSchema = mongoose.Schema({
     },
     identitas:{
         type: String,
-        required: null
+        required: true
     },
     createdAt: {
         type: Date,

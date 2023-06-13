@@ -21,7 +21,7 @@ const ProductsSchema = mongoose.Schema({
     },
     keterangan:{
         type: Number,
-        required: true
+        required: false
     },
     createdAt: {
         type: Date,

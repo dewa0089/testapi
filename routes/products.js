@@ -46,16 +46,16 @@ router.get('/:kategori', async (req, res) => {
     }
 })
 
-//Get id
-router.get('/:best', async (req, res) => {
-    try{
-        const products = await Products.find({best:req.params.best});
-        res.json(products)
-    }
-    catch(error){
-        res.status(500).json({message: error.message})
-    }
-})
+// //Get id
+// router.get('/:best', async (req, res) => {
+//     try{
+//         const products = await Products.find({best:req.params.best});
+//         res.json(products)
+//     }
+//     catch(error){
+//         res.status(500).json({message: error.message})
+//     }
+// })
 
 
 

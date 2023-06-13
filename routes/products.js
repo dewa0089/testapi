@@ -47,9 +47,9 @@ router.get('/:kategori', async (req, res) => {
 })
 
 //Get id
-router.get('coba/:best', async (req, res) => {
+router.get('/:cobabest', async (req, res) => {
     try{
-        const products = await Products.find({best:req.params.best});
+        const products = await Products.find({cobabest:req.params.cobabest});
         res.json(products)
     }
     catch(error){

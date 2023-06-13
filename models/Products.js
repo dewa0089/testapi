@@ -15,10 +15,6 @@ const ProductsSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    gambar: {
-        type: String,
-        required: true
-    },
     percobaan:{
         type: Number,
         required: true

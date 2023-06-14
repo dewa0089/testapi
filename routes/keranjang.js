@@ -7,13 +7,7 @@ const Keranjang = require('../models/Keranjang')
 router.post('/', async(req, res) => {
     // tampung input mahasiswa 
     const keranjangPost = new Keranjang({
-        jumlah_pemesanan: req.body.jumlah_pemesanan,
-        keterangan: req.body.keterangan,
-        best: req.body.best,
-        gambar: req.body.gambar,
-        harga: req.body.harga,
-        kategori: req.body.kategori,
-        nama: req.body.nama,
+        
     })
 
     try {

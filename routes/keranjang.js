@@ -4,7 +4,7 @@ const router = express.Router()
 const Keranjang = require('../models/Keranjang')
 
 // Create 
-router.post('/_id', async(req, res) => {
+router.post('/', async(req, res) => {
     // tampung input mahasiswa 
     const keranjangPost = new Keranjang({
         jumlah_pemesanan: req.body.jumlah_pemesanan,
@@ -18,7 +18,7 @@ router.post('/_id', async(req, res) => {
 
     try {
         // simpan data 
-        const keranjang = await keranjangPost.save({_id: params._id})
+        const keranjang = await keranjangPost.save({_id})
         // response
         res.json(keranjang)
     } catch (error) {

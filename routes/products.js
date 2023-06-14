@@ -55,9 +55,9 @@ router.get('/:kategori/k', async (req, res) => {
     }
 })
 
-router.get('/:nama/?', async (req, res) => {
+router.get('/:nama/go', async (req, res) => {
     try{
-        const products = await Products.find({nama:req.params.nama});
+        var products = await Products.find({nama:req.params.nama});
         res.json(products)
     }
     catch(error){

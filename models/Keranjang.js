@@ -12,7 +12,7 @@ const KeranjangSchema = mongoose.Schema({
         required : true
     },
     best:{
-        type: String,
+        type: Number,
         required : true
     },
     gambar:{
@@ -20,11 +20,11 @@ const KeranjangSchema = mongoose.Schema({
         required : true
     },
     harga:{
-        type: String,
+        type: Number,
         required : true
     },
     kategori:{
-        type: String,
+        type: Number,
         required : true
     },
     nama:{

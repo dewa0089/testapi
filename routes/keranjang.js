@@ -4,15 +4,21 @@ const router = express.Router()
 const Keranjang = require('../models/Keranjang')
 
 // Create 
-router.post('/', async(req, res) => {
+router.post('/_id', async(req, res) => {
     // tampung input mahasiswa 
     const keranjangPost = new Keranjang({
-        
+        jumlah_pemesanan: req.body.jumlah_pemesanan,
+        keterangan: req.body.keterangan,
+        best: req.body.best,
+        gambar: req.body.gambar,
+        harga: req.body.harga,
+        kategori: req.body.kategori,
+        nama: req.body.nama,
     })
 
     try {
         // simpan data 
-        const keranjang = await keranjangPost.save()
+        const keranjang = await keranjangPost.save({_id: params._id})
         // response
         res.json(keranjang)
     } catch (error) {

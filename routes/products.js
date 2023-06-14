@@ -55,15 +55,23 @@ router.get('/:kategori/k', async (req, res) => {
     }
 })
 
-router.get('/:nama/go', async (req, res) => {
-    try{
-        var products = await Products.find({nama:req.params.nama});
-        res.json(products)
-    }
-    catch(error){
-        res.status(500).json({message: error.message})
-    }
-})
+router.get('/', async (req, res) => {
+    const filters = req.query;
+    const filteredUsers = Products.filter(user => {
+      let isValid = true;
+      for (key in filters) {
+        console.log(key, user[key], filters[key]);
+        isValid = isValid && user[key] == filters[key];
+      }
+      return isValid;
+    });
+    res.send(filteredUsers);
+  });
+    
+  // Start server on PORT 5000
+  app.listen(5000, () => {
+    console.log('Server started!');
+  });
 
 //Get id
 router.get('/:best/b', async (req, res) => {

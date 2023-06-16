@@ -4,38 +4,30 @@ const router = express.Router()
 const Keranjang = require('../models/Keranjang')
 
 // Create 
-// router.post('/', async(req, res) => {
-//     // tampung input mahasiswa 
-//     const keranjangPost = new Keranjang({
-//         jumlah_pemesanan: req.body.jumlah_pemesanan,
-//         keterangan: req.body.keterangan,
-//         nama: req.body.nama,
-//         harga: req.body.harga,
-//         gambar: req.body.gambar,
-//         best: req.body.best,
-//         kategori: req.body.kategori
-//     })
+router.post('/', async(req, res) => {
+    // tampung input mahasiswa 
+    const keranjangPost = new Keranjang({
+        jumlah_pemesanan: req.params.jumlah_pemesanan,
+        keterangan: req.params.keterangan,
+        nama: req.params.nama,
+        harga: req.params.harga,
+        gambar: req.params.gambar,
+        best: req.params.best,
+        kategori: req.params.kategori
+    })
 
-//     try {
-//         // simpan data 
-//         const keranjang = await keranjangPost.save()
-//         // response
-//         res.json(keranjang)
-//     } catch (error) {
-//         res.json({message: error})
-//     }
-// })
+    try {
+        // simpan data 
+        const keranjang = await keranjangPost.save()
+        // response
+        res.json(keranjang)
+    } catch (error) {
+        res.json({message: error})
+    }
+})
 
 
-function post(req, res, next) {
-    const prop = pluralize.singular(req.params.resource)
-    req.body[`${prop}${opts.foreignKeySuffix}`] = req.params.id
-    req.url = `/${req.params.nested}`
-    next()
 
-    return router
-    .post('/:resource/:id/:nested', post)
-  }
 
   
 

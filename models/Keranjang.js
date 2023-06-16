@@ -11,15 +11,25 @@ const KeranjangSchema = mongoose.Schema({
         type: String,
         required : true
     },
-    products:{
-        best,
-        createdAt,
-        gambar,
-        harga,
-        kategori,
-        nama,
-        __v,
-        _id
+    nama: {
+        type: String,
+        required: true
+    },
+    harga: {
+        type: Number,
+        required: true
+    },
+    gambar: {
+        type: String,
+        required: true
+    },
+    best: {
+        type: Number,
+        required: true
+    },
+    ketegori: {
+        type: String,
+        required: true
     },
     createdAt: {
         type: Date,

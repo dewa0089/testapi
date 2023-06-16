@@ -15,6 +15,21 @@ const KeranjangSchema = mongoose.Schema({
         productId: {
             type: String,
           },
+        nama: {
+            type: String,
+        },
+        harga: {
+            type: Number,
+        },
+        gambar: {
+            type: String,
+        },
+        best: {
+            type: Number,
+        },
+        ketegori: {
+            type: String,
+        },
     },
     ],
 })

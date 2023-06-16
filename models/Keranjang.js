@@ -12,12 +12,15 @@ const KeranjangSchema = mongoose.Schema({
         required : true
     },
     products:{
-        
+        best,
+        createdAt,
+        gambar,
+        harga,
+        kategori,
+        nama,
+        __v,
+        _id
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
 })
 
 module.exports = mongoose.model('Keranjang', KeranjangSchema)

@@ -12,7 +12,7 @@ router.post('/', async(req, res) => {
 
     try {
         // simpan data 
-        const keranjang = await keranjangPost.save({_id})
+        const keranjang = await keranjangPost.save()
         // response
         res.json(keranjang)
     } catch (error) {

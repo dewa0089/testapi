@@ -11,6 +11,9 @@ const KeranjangSchema = mongoose.Schema({
         type: String,
         required : true
     },
+    products:{
+        
+    },
     createdAt: {
         type: Date,
         default: Date.now

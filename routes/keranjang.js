@@ -7,16 +7,42 @@ const Products = require('../models/Products')
 // Create 
 router.post('/', async(req, res) => {
     // tampung input mahasiswa 
+    const keranjangPost = new Keranjang({
+        jumlah_pemesanan: req.params.jumlah_pemesanan,
+        keterangan: req.params.keterangan,
+        Products:{
+            best: req.params.best,
+            gambar: req.params.gambar,
+            createdAt: req.params.createdAt, 
+            harga: req.params.harga,
+            kategori: req.params.kategori,
+            nama: req.params.nama,
+            __v: req.params.__v,
+            _id: req.params._id
+        }
+    })
 
     try {
         // simpan data 
-        const keranjang = await Keranjang.save({nama:req.params.nama})
+        const keranjang = await keranjangPost.save()
         // response
         res.json(keranjang)
     } catch (error) {
         res.json({message: error})
     }
 })
+
+//Get id
+router.get('/:kategori/k', async (req, res) => {
+    try{
+        const products = await Products.find({kategori:req.params.kategori});
+        res.json(products)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
+
 
 
 // Read

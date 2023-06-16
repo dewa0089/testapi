@@ -3,33 +3,22 @@ const express = require('express')
 const router = express.Router() 
 const Keranjang = require('../models/Keranjang')
 
-// Create 
-// router.post('/', async(req, res) => {
-//     // tampung input mahasiswa 
-//     const keranjangPost = new Keranjang({
-//         jumlah_pemesanan: req.body.jumlah_pemesanan,
-//         keterangan: req.body.keterangan,
-//         products: req.body.products
-//     })
+Create 
+router.post('/', async(req, res) => {
+    // tampung input mahasiswa 
+    const keranjangPost = new Keranjang({
+        
+    })
 
-//     try {
-//         // simpan data 
-//         const keranjang = await keranjangPost.save({_id})
-//         // response
-//         res.json(keranjang)
-//     } catch (error) {
-//         res.json({message: error})
-//     }
-// })
-
-export async function createUser(data) {
-    const response = await fetch(`/`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({user: data})
-      })
-    return await response.json();
-}
+    try {
+        // simpan data 
+        const keranjang = await keranjangPost.save({_id})
+        // response
+        res.json(keranjang)
+    } catch (error) {
+        res.json({message: error})
+    }
+})
 
 // Read
 router.get('/', async(req, res) => {

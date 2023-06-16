@@ -11,30 +11,29 @@ const KeranjangSchema = mongoose.Schema({
         type: String,
         required : true
     },
-    nama: {
-        type: String,
-        required: true
+    products :[{
+        nama: {
+            type: String,
+            required: true
+        },
+        harga: {
+            type: Number,
+            required: true
+        },
+        gambar: {
+            type: String,
+            required: true
+        },
+        best: {
+            type: Number,
+            required: true
+        },
+        ketegori: {
+            type: String,
+            required: true
+        },
     },
-    harga: {
-        type: Number,
-        required: true
-    },
-    gambar: {
-        type: String,
-        required: true
-    },
-    best: {
-        type: Number,
-        required: true
-    },
-    ketegori: {
-        type: String,
-        required: true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
+    ],
 })
 
 module.exports = mongoose.model('Keranjang', KeranjangSchema)

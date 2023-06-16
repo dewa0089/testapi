@@ -7,20 +7,7 @@ const Products = require('../models/Products')
 // Create 
 router.post('/', async(req, res) => {
     // tampung input mahasiswa 
-    const keranjangPost = new Keranjang({
-        jumlah_pemesanan: req.params.jumlah_pemesanan,
-        keterangan: req.params.keterangan,
-        Products:{
-            best: req.params.best,
-            gambar: req.params.gambar,
-            createdAt: req.params.createdAt, 
-            harga: req.params.harga,
-            kategori: req.params.kategori,
-            nama: req.params.nama,
-            __v: req.params.__v,
-            _id: req.params._id
-        }
-    })
+    const keranjangPost = new Keranjang(req.body)
 
     try {
         // simpan data 

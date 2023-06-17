@@ -11,7 +11,7 @@ const OrderSchema = mongoose.Schema({
         type: String,
         required : true
     },
-    keranjangs:{
+    keranjangs:[{
             jumlah_pemesanan:{
                 type: String,
             },
@@ -35,7 +35,7 @@ const OrderSchema = mongoose.Schema({
                     type: String,
                 },
             },
-    },
+    }],
 })
 
 module.exports = mongoose.model('Order', OrderSchema)

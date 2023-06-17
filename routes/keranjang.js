@@ -12,14 +12,7 @@ router.post('/', async(req, res) => {
     const keranjangPost = new Keranjang({
         jumlah_pemesanan: req.body.jumlah_pemesanan,
         keterangan: req.body.keterangan,
-        products:({
-        _id: req.params._id,
-        nama: req.params.nama,
-        harga: req.params.harga,
-        gambar: req.params.gambar,
-        best: req.params.best,
-        kategori: req.params.kategori
-        }),
+        products: products.body.products
     })
 
     try {

@@ -11,22 +11,30 @@ const OrderSchema = mongoose.Schema({
         type: String,
         required : true
     },
-    products :{
-        _id: {
-            type: String,
-          },
-        nama: {
-            type: String,
-        },
-        harga: {
-            type: Number,
-        },
-        gambar: {
-            type: String,
-        },
-        ketegori: {
-            type: String,
-        },
+    keranjangs:{
+            jumlah_pemesanan:{
+                type: String,
+            },
+            keterangan: {
+                type:String
+            },
+            products :{
+                _id: {
+                    type: String,
+                  },
+                nama: {
+                    type: String,
+                },
+                harga: {
+                    type: Number,
+                },
+                gambar: {
+                    type: String,
+                },
+                ketegori: {
+                    type: String,
+                },
+            },
     },
 })
 

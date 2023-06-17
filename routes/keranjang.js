@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router() 
 const Keranjang = require('../models/Keranjang')
-const Products = require('../models/Products')
+
 
 // Create 
 router.post('/', async(req, res) => {
@@ -12,12 +12,14 @@ router.post('/', async(req, res) => {
     const keranjangPost = new Keranjang({
         jumlah_pemesanan: req.body.jumlah_pemesanan,
         keterangan: req.body.keterangan,
+        products:[{
         _id: req.body._id,
         nama: req.body.nama,
         harga: req.body.harga,
         gambar: req.body.gambar,
         best: req.body.best,
         kategori: req.body.kategori
+        }],
     })
 
     try {

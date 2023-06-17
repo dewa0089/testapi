@@ -6,9 +6,7 @@ const Order = require('../models/Order')
 // Create 
 router.post('/', async(req, res) => {
     // tampung input mahasiswa 
-    const orderPost = new Order({
-        
-    })
+    const orderPost = new Order(req.body)
 
     try {
         // simpan data 

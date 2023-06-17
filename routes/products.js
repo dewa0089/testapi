@@ -68,7 +68,7 @@ router.get('/:best/b', async (req, res) => {
 })
 
 //Get id
-router.get('/q/:nama', async (req, res) => {
+router.get('/', async (req, res) => {
     try{
         const products = await Products.find({nama:req.query.nama});
         res.json(products)

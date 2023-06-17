@@ -73,10 +73,7 @@ router.get('/', async (req, res) => {
     const qnew = req.query.nama
 
     try{
-        const products = await Products.find({nama: {
-            $in: [qnew],
-          },
-        });
+        const products = await Products.find({qnew});
         res.json(products)
     }
     catch(error){

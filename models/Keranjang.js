@@ -11,7 +11,7 @@ const KeranjangSchema = mongoose.Schema({
         type: String,
         required : true
     },
-    products :[{
+    products :{
         _id: {
             type: String,
           },
@@ -31,7 +31,6 @@ const KeranjangSchema = mongoose.Schema({
             type: String,
         },
     },
-    ],
 })
 
 module.exports = mongoose.model('Keranjang', KeranjangSchema)

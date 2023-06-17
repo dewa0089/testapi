@@ -70,7 +70,7 @@ router.get('/:best/b', async (req, res) => {
 //Get id
 router.get('/q=/:nama', async (req, res) => {
     try{
-        const products = await Products.find({nama:req.params.nama});
+        const products = await Products.find({nama:req.query.nama});
         res.json(products)
     }
     catch(error){

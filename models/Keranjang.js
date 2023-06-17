@@ -32,9 +32,6 @@ const KeranjangSchema = mongoose.Schema({
         },
     },
     ],
-    id:{
-        type:Number
-    },
 })
 
 module.exports = mongoose.model('Keranjang', KeranjangSchema)

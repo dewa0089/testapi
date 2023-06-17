@@ -7,13 +7,7 @@ const Keranjang = require('../models/Keranjang')
 // Create 
 router.post('/', async(req, res) => {
     // tampung input mahasiswa 
-    // const keranjangPost = new Keranjang(req.body)
-
-    const keranjangPost = new Keranjang({
-        jumlah_pemesanan: req.body.jumlah_pemesanan,
-        keterangan: req.body.keterangan,
-        products: products.body.products
-    })
+    const keranjangPost = new Keranjang(req.body)
 
     try {
         // simpan data 
@@ -25,16 +19,6 @@ router.post('/', async(req, res) => {
     }
 })
 
-//Get id
-router.get('/:kategori/k', async (req, res) => {
-    try{
-        const products = await Products.find({kategori:req.params.kategori});
-        res.json(products)
-    }
-    catch(error){
-        res.status(500).json({message: error.message})
-    }
-})
 
 
 

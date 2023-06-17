@@ -12,7 +12,7 @@ const KeranjangSchema = mongoose.Schema({
         required : true
     },
     products :[{
-        productId: {
+        _id: {
             type: String,
           },
         nama: {
@@ -32,6 +32,9 @@ const KeranjangSchema = mongoose.Schema({
         },
     },
     ],
+    id:{
+        type:Number
+    },
 })
 
 module.exports = mongoose.model('Keranjang', KeranjangSchema)
